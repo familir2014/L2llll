@@ -9,7 +9,9 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 public class ManufacturerDto {
-//
+
+
+
     @JsonProperty(value = "id")
     private Long manufacturerId;
     private String name;
