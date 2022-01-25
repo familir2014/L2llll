@@ -37,7 +37,6 @@ class ManufacturerServTest {
 
     @Test
     public void findAllManufacturersTest() {
-        // given
         List<Manufacturer> manufacturers = new ArrayList<>(){{
             add(new Manufacturer(1L, "Apple", new HashSet<>(), 1, "user1", LocalDateTime.now(), "user1", LocalDateTime.now()));
             add(new Manufacturer(2L, "Microsoft", new HashSet<>(), 1, "user1", LocalDateTime.now(), "user1", LocalDateTime.now()));
@@ -45,10 +44,8 @@ class ManufacturerServTest {
 
         given(manufacturerDao.findAll()).willReturn(manufacturers);
 
-        // when
         List<ManufacturerDto> manufacturerDtos = manufacturerService.findAll();
 
-        // then
         then(manufacturerDao).should().findAll();
         assertEquals(manufacturers.size(), manufacturerDtos.size());
     }
