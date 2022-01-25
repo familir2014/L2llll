@@ -38,8 +38,8 @@ class ManufacturerServTest {
     @Test
     public void findAllManufacturersTest() {
         List<Manufacturer> manufacturers = new ArrayList<>(){{
-            add(new Manufacturer(1L, "Apple", new HashSet<>(), 1, "user1", LocalDateTime.now(), "user1", LocalDateTime.now()));
-            add(new Manufacturer(2L, "Microsoft", new HashSet<>(), 1, "user1", LocalDateTime.now(), "user1", LocalDateTime.now()));
+            add(new Manufacturer(1L, "Beer", new HashSet<>(), 1, "user1", LocalDateTime.now(), "user1", LocalDateTime.now()));
+            add(new Manufacturer(2L, "Meet", new HashSet<>(), 1, "user1", LocalDateTime.now(), "user1", LocalDateTime.now()));
         }};
 
         given(manufacturerDao.findAll()).willReturn(manufacturers);
@@ -53,9 +53,9 @@ class ManufacturerServTest {
     @Test
     public void saveManufacturer() {
 
-        Manufacturer manufacturerFromDao = new Manufacturer(1L, "Apple", new HashSet<>(), 1, "user1", LocalDateTime.now(), "user1", LocalDateTime.now());
+        Manufacturer manufacturerFromDao = new Manufacturer(1L, "Beer", new HashSet<>(), 1, "user1", LocalDateTime.now(), "user1", LocalDateTime.now());
 
-        ManufacturerDto manufacturerDto = new ManufacturerDto(null, "Apple");
+        ManufacturerDto manufacturerDto = new ManufacturerDto(null, "Beer");
 
         given(manufacturerDao.save(any(Manufacturer.class))).willReturn(manufacturerFromDao);
         given(manufacturerMapper.toManufacturer(any())).will(new ToManufacturer());
